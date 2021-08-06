@@ -6,7 +6,7 @@ public class CameraMovement : MonoBehaviour
 {
     private Transform lookAt;
     private Vector3 startOffset;
-    
+    private Vector3 moveVector;
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +19,12 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveVector = lookAt.position + startOffset;
+        moveVector = lookAt.position + startOffset;   //opens up x and y modifications for the camera follow
+
+        moveVector.x = 0;                             // horizontal stays middle when player turns left or right
+
         
-        transform.position = lookAt.position + startOffset;    //main camera (player) follow (fix stay center)
+
+        transform.position = moveVector;              
     }
 }
