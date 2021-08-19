@@ -8,9 +8,9 @@ public class GameObjectSize : MonoBehaviour
     void Start()
     {
         Vector3 tileSize = GetComponent<Renderer>().bounds.size;
-        Debug.Log(tileSize.x);
-        Debug.Log(tileSize.y);
-        Debug.Log(tileSize.z);
+        Debug.Log(tileSize.x);   //2.137795
+        Debug.Log(tileSize.y);   //0.7175648
+        Debug.Log(tileSize.z);   //3.798935
     }
 
     // Update is called once per frame

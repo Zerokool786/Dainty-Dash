@@ -25,7 +25,15 @@ public class TileManager : MonoBehaviour
 
         for (int i = 0; i < tilesOnScreen; i++)
         {
-            SpawnTile();
+            if (i < 6)
+
+                SpawnTile(0);
+
+            else
+                
+                SpawnTile();
+
+
         }
         
 
@@ -41,12 +49,22 @@ public class TileManager : MonoBehaviour
         }
     }
 
-    private void SpawnTile (int prefabIndex = -1)
+    private void SpawnTile (int prefabIndex = -1)                //picks a random tile
     {
-        GameObject reference;                                   //tile spawn becomes child clutter free hierarchy
-        reference = Instantiate(tilePrefabs[RandomPrefabIndex()]) as GameObject;
+        GameObject reference;                                   //tile spawn becomes child of tile mnager clutter free hierarchy
+
+        if (prefabIndex == -1)
+
+            reference = Instantiate(tilePrefabs[RandomPrefabIndex()]) as GameObject;
+
+        else
+
+            reference = Instantiate(tilePrefabs[prefabIndex]) as GameObject;
+        
         reference.transform.SetParent(transform);
+        
         reference.transform.position = Vector3.forward * spawnZ;
+        
         spawnZ += tileLength;
         activeTiles.Add(reference);
     }

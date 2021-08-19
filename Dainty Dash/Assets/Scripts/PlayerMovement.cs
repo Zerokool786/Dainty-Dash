@@ -8,11 +8,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveVector;
 
     private float animationDelay = 3.0f;
-    private float playerSpeed = 3.0f;
+    private float playerSpeed = 2.0f;
     private float verticalVelocity = 0.0f;
     private float gravity = 12.0f;
 
-    public float jumpSpeed = 4.0f;
+    public float jumpSpeed = 1.0f;
     
     // Start is called before the first frame update
     void Start()
@@ -50,5 +50,10 @@ public class PlayerMovement : MonoBehaviour
         controller.Move((moveVector) * Time.deltaTime);
 
         transform.Translate(0, jumpSpeed * Input.GetAxis("Jump") * Time.deltaTime, 0);
+    }
+
+    public void setPlayerSpeed (float modifier)
+    {
+        playerSpeed = 1.0f + modifier;
     }
 }
