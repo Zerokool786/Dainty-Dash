@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpSpeed = 1.0f;
     
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        
         if(Time.time < animationDelay)                                                  // starts at zero to 3 secs restrict player movement while swerve finishes
         {
             controller.Move(Vector3.forward * playerSpeed * Time.deltaTime);
@@ -56,4 +59,6 @@ public class PlayerMovement : MonoBehaviour
     {
         playerSpeed = 1.0f + modifier;
     }
+    
+    
 }

@@ -13,11 +13,6 @@ public class Score : MonoBehaviour
     
     public Text scoreText;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -41,4 +36,6 @@ public class Score : MonoBehaviour
         GetComponent<PlayerMovement>().setPlayerSpeed(hardMode);
         Debug.Log(hardMode);
     }
+
+    
 }
